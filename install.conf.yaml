@@ -1,0 +1,40 @@
+- clean: ['~']
+
+- shell:
+  # update submodules
+  - [git submodule update --init --recursive, Installing submodules]
+  # installing dependencies
+  - [brew install coreutils, Installing coreutils]
+  - [brew install python, Installing python]
+  # powerline shell
+  - [pip install powerline-status, Installing powerline shell]
+  # rdf.sh
+  - ["brew install https://raw.githubusercontent.com/seebi/rdf.sh/master/brew/rdf.sh.rb", Installing rdf.sh]
+  - [pip install Pygments, Installing Pygments]
+  - description: "Installing n3pygments"
+    command: "sh rdf.sh/install_n3pygments.sh"
+    stdin: true
+  # terminal notifications
+  - [brew install terminal-notifier, Installing terminal-notifier]
+  # creating directories
+  - [mkdir -p ~/.config, Creating .config directory]
+  - [mkdir -p ~/.bin, Creating .bin directory]
+
+- link:
+    ~/.zshrc: zsh/zshrc
+    ~/.ackrc: ack/ackrc
+    ~/.slate.js: slate/slate.js
+    ~/.bin/subl: "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+    # git
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+    ~/.bin/git-email-prompt: git/git-email-prompt.sh
+    # powerline shell
+    ~/.config/powerline: powerline/config_files/
+    # rdf.sh
+    ~/.config/rdf.sh: rdf.sh/
+    # docker
+    ~/.bin/docker-i: docker/docker-i
+    ~/.bin/docker-loglast: docker/docker-loglast
+    ~/.bin/docker-psa: docker/docker-psa
+    ~/.bin/docker-rmf: docker/docker-rmf

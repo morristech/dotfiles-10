@@ -1,0 +1,9 @@
+[submodule "submodules/dotbot"]
+	path = submodules/dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "submodules/antigen"]
+	path = submodules/antigen
+	url = https://github.com/zsh-users/antigen.git
+[submodule "submodules/n3pygments"]
+	path = submodules/n3pygments
+	url = https://github.com/gniezen/n3pygments.git
