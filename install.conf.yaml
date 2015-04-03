@@ -1,29 +1,57 @@
 - clean: ['~']
 
 - shell:
-  # update submodules
-  - [git submodule update --init --recursive, Installing submodules]
-  # installing dependencies
+  # homebrew
+  - description: "Installing Homebrew"
+    command: 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+    stdin: true
+  # some dependencies
   - [brew install coreutils, Installing coreutils]
+  - [brew install wget, Installing wget]
+  - [brew install curl, Installing curl]
   - [brew install python, Installing python]
+  # zsh
+  - [brew install zsh, Installing zsh]
+  - [brew install zsh-completions, Installing zsh-completions]
+  - description: "Changing default shell to zsh"
+    command: "chsh -s /usr/local/bin/zsh"
+    stdin: true
   # powerline shell
   - [pip install powerline-status, Installing powerline shell]
+  # terminal notifications
+  - [brew install terminal-notifier, Installing terminal-notifier]
+  # fasd
+  - [brew install fasd, Installing fasd]
+  # git
+  - [brew install git, Installing git]
+  - [brew install git-flow, Installing git-flow]
+  - [brew install tig, Installing tig]
+  # ack
+  - [brew install ack, Installing ack]
+  # ncdu
+  - [brew install ncdu, Installing ncdu]
+  # tree
+  - [brew install tree, Installing tree]
   # rdf.sh
   - ["brew install https://raw.githubusercontent.com/seebi/rdf.sh/master/brew/rdf.sh.rb", Installing rdf.sh]
   - [pip install Pygments, Installing Pygments]
   - description: "Installing n3pygments"
     command: "sh rdf.sh/install_n3pygments.sh"
     stdin: true
-  # terminal notifications
-  - [brew install terminal-notifier, Installing terminal-notifier]
+  # raptor
+  - [brew install raptor, Installing raptor]
   # creating directories
   - [mkdir -p ~/.config, Creating .config directory]
   - [mkdir -p ~/.bin, Creating .bin directory]
 
 - link:
+    # zsh
     ~/.zshrc: zsh/zshrc
+    # ack
     ~/.ackrc: ack/ackrc
+    # slate
     ~/.slate.js: slate/slate.js
+    # sublime
     ~/.bin/subl: "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
     # git
     ~/.gitconfig: git/gitconfig
