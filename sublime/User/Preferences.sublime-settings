@@ -1,0 +1,50 @@
+{
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/Base16 Color Schemes/base16-eighties.dark.tmTheme",
+	"create_window_at_startup": true,
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"draw_white_space": "all",
+	"file_exclude_patterns":
+	[
+		"*.pdf",
+		"*synctex.gz"
+	],
+	"findreplace_small": true,
+	"font_face": "Source Code Pro ExtraLight",
+	"font_size": 12.0,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"icon_file_type_enable": true,
+	"ignored_packages":
+	[
+		"Vintage",
+		"Markdown",
+		"Vintageous"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"open_files_in_new_window": false,
+	"remember_open_files": false,
+	"revert_font_size": 12.0,
+	"rulers":
+	[
+		100
+	],
+	"scroll_past_end": true,
+	"sidebar_row_padding_medium": true,
+	"sidebar_size_12": true,
+	"tab_completion": false,
+	"tab_size": 2,
+	"tabs_medium": true,
+	"theme": "Afterglow-orange.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": false,
+	"word_wrap": true,
+	"wrap_width": 100
+}

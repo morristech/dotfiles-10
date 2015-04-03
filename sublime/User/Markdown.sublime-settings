@@ -1,0 +1,10 @@
+{
+	"spell_check": true,
+	"tab_size": 4,
+  "extensions":
+  [
+    "md",
+    "mdown",
+    "markdown"
+  ]
+}

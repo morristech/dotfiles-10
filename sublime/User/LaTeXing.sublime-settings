@@ -1,0 +1,19 @@
+{
+    /*
+     * Output Directory
+     *
+     * LaTeXing can use an output directory to separate the generated files
+     * from the source code.
+     *
+     * output_directory: enables the use of an output directory
+     * Output_directory_mode: use a relative directory names "Output" next to
+     * your source code (0) or use a temporary dictionary (1).
+     *
+     * Just can clean up the temporary dictionary by calling the "Clean
+     * Temporary Output Dictionary" command.
+     *
+     */
+
+    "output_directory": true,
+    "output_directory_mode": 1
+}
