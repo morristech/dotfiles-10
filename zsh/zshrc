@@ -12,6 +12,7 @@ antigen bundle docker
 antigen bundle fasd
 antigen bundle git
 antigen bundle git-extras
+antigen bundle gpg-agent
 antigen bundle gradle
 antigen bundle mvn
 antigen bundle osx
