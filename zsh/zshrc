@@ -25,6 +25,10 @@ antigen bundle web-search
 # bundles from other repos
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle Lokaltog/powerline powerline/bindings/zsh # powerline shell
+antigen bundle chriskempson/base16-shell base16-eighties.dark.sh # needed for powerline
 
 # custom bundles
 antigen bundle $HOME/.dotfiles/zsh/
+
+# we finished
+antigen apply
