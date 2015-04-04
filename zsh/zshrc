@@ -1,35 +1,47 @@
-# load antigen zsh plugin manager
-source .dotfiles/submodules/antigen/antigen.zsh
+# load zgen
+source "${HOME}/.dotfiles/submodules/zgen/zgen.zsh"
 
-# load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# check if there's no init script
+# zgen configuration
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-# bundles from the default repo (robbyrussell's oh-my-zsh)
-antigen bundle brew
-antigen bundle bgnotify
-antigen bundle command-not-found
-antigen bundle docker
-antigen bundle fasd
-antigen bundle git
-antigen bundle git-extras
-antigen bundle gpg-agent
-antigen bundle gradle
-antigen bundle mvn
-antigen bundle osx
-antigen bundle pip
-antigen bundle ssh-agent
-antigen bundle sublime
-antigen bundle sudo
-antigen bundle web-search
+    zgen oh-my-zsh
 
-# bundles from other repos
-antigen bundle Tarrasch/zsh-bd
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle Lokaltog/powerline powerline/bindings/zsh # powerline shell
-antigen bundle chriskempson/base16-shell base16-eighties.dark.sh # needed for powerline
+    # plugins
+    zgen oh-my-zsh plugins/brew
+    zgen oh-my-zsh plugins/bgnotify
+    zgen oh-my-zsh plugins/command-not-found
+    zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/fasd
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/git-extras
+    zgen oh-my-zsh plugins/gpg-agent
+    zgen oh-my-zsh plugins/gradle
+    zgen oh-my-zsh plugins/mvn
+    zgen oh-my-zsh plugins/osx
+    zgen oh-my-zsh plugins/pip
+    zgen oh-my-zsh plugins/ssh-agent
+    zgen oh-my-zsh plugins/sublime
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/web-search
 
-# custom bundles
-antigen bundle $HOME/.dotfiles/zsh/
+    # bundles from other repos
+    zgen load Tarrasch/zsh-bd bd.plugin.zsh
+    zgen load zsh-users/zsh-completions src
+    zgen load zsh-users/zsh-syntax-highlighting zsh-syntax-highlighting.plugin.zsh
+    zgen load chriskempson/base16-shell base16-eighties.dark.sh # needed for powerline
 
-# we finished
-antigen apply
+    # theme
+    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train.zsh-theme
+
+    # save all to init script
+    zgen save
+fi
+
+# Load all files from .dotfiles/zsh/ directory
+if [ -d $HOME/.dotfiles/zsh ]; then
+  for file in $HOME/.dotfiles/zsh/*.zsh; do
+    source $file
+  done
+fi

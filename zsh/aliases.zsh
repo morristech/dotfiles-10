@@ -24,8 +24,5 @@ alias grep='ack'
 alias diskusage='ncdu'
 alias rf='rm -rf'
 
-# disable oh-my-zsh defaults
-unalias md
-
 # When using sudo, use alias expansion (otherwise sudo ignores your aliases)
 alias sudo='sudo '

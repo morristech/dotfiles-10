@@ -1,0 +1,38 @@
+# load antigen zsh plugin manager
+source .dotfiles/submodules/antigen/antigen.zsh
+
+# load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# bundles from the default repo (robbyrussell's oh-my-zsh)
+antigen bundle brew
+antigen bundle bgnotify
+antigen bundle command-not-found
+antigen bundle docker
+antigen bundle fasd
+antigen bundle git
+antigen bundle git-extras
+antigen bundle gpg-agent
+antigen bundle gradle
+antigen bundle mvn
+antigen bundle osx
+antigen bundle pip
+antigen bundle ssh-agent
+antigen bundle sublime
+antigen bundle sudo
+antigen bundle web-search
+
+# bundles from other repos
+antigen bundle Tarrasch/zsh-bd
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle chriskempson/base16-shell base16-eighties.dark.sh # needed for powerline
+
+# shell theme
+#antigen bundle Lokaltog/powerline powerline/bindings/zsh
+antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+
+# custom bundles
+antigen bundle $HOME/.dotfiles/zsh/
+
+# we finished
+antigen apply
