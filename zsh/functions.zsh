@@ -47,20 +47,6 @@ function rdf() {
   fi
 }
 
-# open dotfiles with Sublime Text
-# function open() {
-
-#   _checkTool subl
-
-#   dotfiles="^\..*"
-#   if [[ "$1" =~ $dotfiles ]]
-#   then
-#     subl && subl $1
-#   else
-#     /usr/bin/open $1
-#   fi
-# }
-
 # edit markdown files with Sublime Text and view them with Marked 2
 function md() {
 
