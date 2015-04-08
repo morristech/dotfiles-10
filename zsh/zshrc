@@ -35,6 +35,7 @@ if ! zgen saved; then
     zgen load Tarrasch/zsh-bd
     zgen load zsh-users/zsh-completions src
     zgen load chriskempson/base16-shell base16-eighties.dark.sh # needed for powerline
+    zgen load RobSis/zsh-completion-generator # automatic completion of getopts commands
 
     # theme
     zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train.zsh-theme
