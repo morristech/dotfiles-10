@@ -9,7 +9,7 @@ if ! zgen saved; then
     zgen oh-my-zsh
 
     # plugins
-    zgen oh-my-zsh plugins/brew
+#    zgen oh-my-zsh plugins/brew
     zgen oh-my-zsh plugins/bgnotify
     zgen oh-my-zsh plugins/colored-man
     zgen oh-my-zsh plugins/command-not-found
@@ -17,13 +17,13 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/fasd
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/git-extras
-    zgen oh-my-zsh plugins/gpg-agent
+#    zgen oh-my-zsh plugins/gpg-agent
     zgen oh-my-zsh plugins/gradle
     zgen oh-my-zsh plugins/mvn
-    zgen oh-my-zsh plugins/osx
+#    zgen oh-my-zsh plugins/osx
     zgen oh-my-zsh plugins/pip
     zgen oh-my-zsh plugins/ssh-agent
-    zgen oh-my-zsh plugins/sublime
+#    zgen oh-my-zsh plugins/sublime
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/web-search
 
@@ -39,7 +39,7 @@ if ! zgen saved; then
     zgen load RobSis/zsh-completion-generator # automatic completion of getopts commands
 
     # theme
-    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train.zsh-theme
+#    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train.zsh-theme
 
     # save all to init script
     zgen save

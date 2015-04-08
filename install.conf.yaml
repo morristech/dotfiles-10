@@ -2,43 +2,58 @@
 
 - shell:
   # homebrew
-  - description: "Installing Homebrew"
-    command: 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-    stdin: true
+#  - description: "Installing Homebrew"
+#    command: 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+#    stdin: true
   # some dependencies
-  - [brew install coreutils, Installing coreutils]
-  - [brew install wget, Installing wget]
-  - [brew install curl, Installing curl]
-  - [brew install python, Installing python]
+#  - [brew install coreutils, Installing coreutils]
+#  - [brew install wget, Installing wget]
+#  - [brew install curl, Installing curl]
+#  - [brew install python, Installing python]
   # zsh
-  - [brew install zsh, Installing zsh]
+#  - [brew install zsh, Installing zsh]
+  - description: "Installing zsh"
+    command: "sudo apt-get install zsh"
+    stdin: true
   - description: "Changing default shell to zsh"
-    command: "chsh -s /usr/local/bin/zsh"
+    command: "chsh -s /usr/bin/zsh"
     stdin: true
   # powerline shell
-  - [pip install powerline-status, Installing powerline shell]
+#  - [pip install powerline-status, Installing powerline shell]
   # terminal notifications
-  - [brew install terminal-notifier, Installing terminal-notifier]
+#  - [brew install terminal-notifier, Installing terminal-notifier]
   # fasd
-  - [brew install fasd, Installing fasd]
+  - description: "Installing fasd"
+    command: "cd submodules/fasd ; PREFIX=$HOME make install ; cd ../.."
+    stdin: true
+#  - [brew install fasd, Installing fasd]
   # git
-  - [brew install git, Installing git]
-  - [brew install git-flow, Installing git-flow]
-  - [brew install tig, Installing tig]
+#  - [brew install git, Installing git]
+#  - [brew install git-flow, Installing git-flow]
+#  - [brew install tig, Installing tig]
   # ack
-  - [brew install ack, Installing ack]
+  - description: "Installing ack-grep"
+    command: "sudo apt-get install ack-grep"
+    stdin: true
   # ncdu
-  - [brew install ncdu, Installing ncdu]
+  - description: "Installing ncdu"
+    command: "sudo apt-get install ncdu"
+    stdin: true
   # tree
-  - [brew install tree, Installing tree]
-  # rdf.sh
-  - ["brew install https://raw.githubusercontent.com/seebi/rdf.sh/master/brew/rdf.sh.rb", Installing rdf.sh]
-  - [pip install Pygments, Installing Pygments]
+  - description: "Installing tree"
+    command: "sudo apt-get install tree"
+    stdin: true
+  # rdf.sh # FIXME
+#  - ["brew install https://raw.githubusercontent.com/seebi/rdf.sh/master/brew/rdf.sh.rb", Installing rdf.sh]
+#  - [pip install Pygments, Installing Pygments]
   - description: "Installing n3pygments"
     command: "sh rdf.sh/install_n3pygments.sh"
     stdin: true
   # raptor
-  - [brew install raptor, Installing raptor]
+  - description: "Installing raptor2-utils"
+    command: "sudo apt-get install raptor2-utils"
+    stdin: true
+  # - [brew install raptor, Installing raptor]
   # creating directories
   - [mkdir -p ~/.config, Creating .config directory]
   - [mkdir -p ~/.bin, Creating .bin directory]
@@ -49,18 +64,18 @@
     # ack
     ~/.ackrc: ack/ackrc
     # slate
-    ~/.slate.js: slate/slate.js
+    # ~/.slate.js: slate/slate.js
     # sublime
-    ~/.bin/subl: "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
-    "~/Library/Application Support/Sublime Text 3/Packages/User": sublime/User
+    # ~/.bin/subl: "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+    # "~/Library/Application Support/Sublime Text 3/Packages/User": sublime/User
     # git
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
     ~/.bin/git-email-prompt: git/git-email-prompt.sh
     # powerline shell
-    ~/.config/powerline: powerline/config_files
+    # ~/.config/powerline: powerline/config_files
     # rdf.sh
-    ~/.config/rdf.sh: rdf.sh
+    # ~/.config/rdf.sh: rdf.sh # FIXME
     # docker
     ~/.bin/docker-i: docker/docker-i
     ~/.bin/docker-loglast: docker/docker-loglast

@@ -34,7 +34,7 @@ function rdf() {
 
   if [[ "$1" = "ns" ]] # extend ns parameter to copy namespace to clipboard too
   then
-    namespace=$(/usr/local/bin/rdf ns $2)
+    namespace=$(/usr/bin/rdf ns $2) # FIXME
     echo "$namespace"
     echo "$namespace" | perl -ne 'chomp and print' | pbcopy
   elif [[ "$1" = "desc" ]]
@@ -55,38 +55,38 @@ function md() {
 }
 
 # email prompt for new git repositories
-function git() {
+# function git() {
 
-  for i do
-        lastArgument=$i # last argument can be the directory or the repository url
-  done
+#   for i do
+#         lastArgument=$i # last argument can be the directory or the repository url
+#   done
 
-  /usr/local/bin/git $@
+#   /usr/local/bin/git $@
 
-  if [[ $? -eq 0 ]] # only show prompt if git command was successful
-  then
-    if [[ "$1" = "init" || "$1" = "clone" ]]
-    then
-      if [[ -d "$lastArgument" ]]
-      then
-        # it was the directory argument, cd it
-        cd $lastArgument
-      else
-        if [[ "$1" = "clone" ]]
-        then
-          # no directory given, parse it from repository url
-          cd $(echo $lastArgument | awk -F/ '{ print $NF }' | rev | sed 's/tig.//' | rev)
-        else if [[ "$1" = "init" && "$lastArgument" = "--bare" ]]
-          return 0
-        fi
-      fi
-      git-email-prompt
-    fi
-  else
-    # return the exit code of the failed git command call
-    return $?
-  fi
-}
+#   if [[ $? -eq 0 ]] # only show prompt if git command was successful
+#   then
+#     if [[ "$1" = "init" || "$1" = "clone" ]]
+#     then
+#       if [[ -d "$lastArgument" ]]
+#       then
+#         # it was the directory argument, cd it
+#         cd $lastArgument
+#       else
+#         if [[ "$1" = "clone" ]]
+#         then
+#           # no directory given, parse it from repository url
+#           cd $(echo $lastArgument | awk -F/ '{ print $NF }' | rev | sed 's/tig.//' | rev)
+#         else if [[ "$1" = "init" && "$lastArgument" = "--bare" ]]
+#           return 0
+#         fi
+#       fi
+#       git-email-prompt
+#     fi
+#   else
+#     # return the exit code of the failed git command call
+#     return $?
+#   fi
+# }
 
 # http://lucapette.me/docker/a-couple-of-useful-aliases-for-docker/
 # to add a custom docker command, make an executable named "docker-COMMAND" available in your path

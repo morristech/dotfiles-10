@@ -7,3 +7,6 @@
 [submodule "submodules/zgen"]
 	path = submodules/zgen
 	url = https://github.com/tarjoilija/zgen
+[submodule "submodules/fasd"]
+	path = submodules/fasd
+	url = https://github.com/clvv/fasd.git

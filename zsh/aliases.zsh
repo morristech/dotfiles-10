@@ -1,6 +1,6 @@
 # ls
 # use GNU ls command (brew install coreutils)
-alias ls=' gls -Fh --color=auto --group-directories-first'
+alias ls=' ls -Fh --color=auto --group-directories-first'
 alias lsa=' ls -a'
 alias l=' ls -l'
 alias ll=' ls -l'
@@ -18,8 +18,6 @@ alias o='open'
 alias s='subl && subl' # fix empty window if sublime was not running before opening file
 alias v='vim'
 alias d='docker'
-alias rdf='rdf'
-alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias diskusage='ncdu'
 alias rf='rm -rf'
 
