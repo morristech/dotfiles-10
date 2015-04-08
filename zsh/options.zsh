@@ -6,3 +6,8 @@ setopt no_share_history
 setopt ignoreeof
 # prevents accidentally overwriting an existing file while clobbering
 setopt noclobber
+
+# Set keystrokes for zsh-users/zsh-history-substring-search plugin
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down

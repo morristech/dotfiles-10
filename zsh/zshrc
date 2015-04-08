@@ -27,10 +27,13 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/web-search
 
     # bundles from other repos
+    # If zsh-syntax-highlighting is bundled after zsh-history-substring-search,
+    # they break, so get the order right.
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
     zgen load unixorn/autoupdate-zgen # zgen automatic updates
     zgen load Tarrasch/zsh-bd
     zgen load zsh-users/zsh-completions src
-    zgen load zsh-users/zsh-syntax-highlighting
     zgen load chriskempson/base16-shell base16-eighties.dark.sh # needed for powerline
 
     # theme
