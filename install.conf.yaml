@@ -12,7 +12,6 @@
   - [brew install python, Installing python]
   # zsh
   - [brew install zsh, Installing zsh]
-  - [brew install zsh-completions, Installing zsh-completions]
   - description: "Changing default shell to zsh"
     command: "chsh -s /usr/local/bin/zsh"
     stdin: true
