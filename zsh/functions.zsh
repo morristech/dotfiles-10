@@ -43,7 +43,7 @@ function rdf() {
     data=$(any23 rover -t -f turtle $2)
     echo "$data" | pygmentize -l turtle
   else
-      /usr/local/bin/rdf $@
+      /usr/bin/rdf $@
   fi
 }
 
@@ -61,7 +61,7 @@ function md() {
 #         lastArgument=$i # last argument can be the directory or the repository url
 #   done
 
-#   /usr/local/bin/git $@
+#   /usr/bin/git $@
 
 #   if [[ $? -eq 0 ]] # only show prompt if git command was successful
 #   then
@@ -97,6 +97,6 @@ docker() {
     shift
     docker-$subcommand $@
   else
-    /usr/local/bin/docker $@
+    /usr/bin/docker $@
   fi
 }
