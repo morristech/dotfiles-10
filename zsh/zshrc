@@ -10,7 +10,7 @@ if ! zgen saved; then
 
     # plugins
 #    zgen oh-my-zsh plugins/brew
-    zgen oh-my-zsh plugins/bgnotify
+#    zgen oh-my-zsh plugins/bgnotify
     zgen oh-my-zsh plugins/colored-man
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/docker
