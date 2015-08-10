@@ -1,6 +1,8 @@
 [user]
-	name = Ruben Navarro Piris
-	email = rnavarropiris@brox.de
+  name = Ruben Navarro Piris
+  email = rnavarropiris@brox.de
+  signingkey = 340FDE6A
+
 [color]
   ui = auto
 
@@ -9,25 +11,22 @@
   aa = add .
   ai = add -i
   b = branch
-  c = commit
-  cm = commit -m
-  cs = commit -s
+  c = commit -s -S
+  cm = commit -s -S -m
   co = checkout
   cob = checkout -b
-  ci = commit
   clean = clean -f -d
   d = diff
   dc = svn dcommit
   desc = describe
   f = fetch --prune --all
-  m = merge
-  mf = merge --no-ff
+  m = merge --no-edit -S
+  mf = merge --no-edit -S --no-ff
   p = push
-  pl = pull
+  ps = "!f(){ git pull "$@" && git submodule update --init --recursive; }; f"
   pop = stash pop
   s = status
-  t = tag
-  ts = tag -s
+  t = tag -s
   co = checkout
   undo = reset HEAD~1 --mixed
   unstage = reset HEAD
@@ -42,10 +41,10 @@
   ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 
 [diff]
-	external = git-meld
+  external = git-meld
 
 [credential]
-	helper = cache --timeout=28800
+  helper = cache --timeout=28800
 
 [color]
   ui = true
@@ -71,4 +70,9 @@
   default = simple
 
 [rerere]
-	enabled = true
+  enabled = true
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true

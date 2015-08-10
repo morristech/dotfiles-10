@@ -1,11 +1,11 @@
-# depressiveRobot's dotfiles (for Ubuntu)
+# depressiveRobot's dotfiles
 
-Personal dotfiles adapted to Ubuntu based on  [depressiveRobot's dotfiles](https://github.com/depressiveRobot/dotfiles).
+Personal dotfiles bootstraped using [dotbot](https://github.com/anishathalye/dotbot).
 
-Work-in-progress, currently only compatible with Ubuntu 14.04.
+Currently only compatible with OS X.
 
 ## Installation
 
-    git clone https://github.com/rnavarropiris/dotfiles.git ~/.dotfiles
+    git clone https://github.com/depressiveRobot/dotfiles.git ~/.dotfiles
     cd ~/.dotfiles
     sh install.sh

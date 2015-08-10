@@ -1,6 +1,9 @@
 # load zgen
 source "${HOME}/.dotfiles/submodules/zgen/zgen.zsh"
 
+# nvm
+. ~/.nvm/nvm.sh
+
 # check if there's no init script
 # zgen configuration
 if ! zgen saved; then
@@ -40,7 +43,8 @@ if ! zgen saved; then
 
     # theme
 #    zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train.zsh-theme
-    zgen load sindresorhus/pure
+    zgen load sindresorhus/pure async.zsh
+    zgen load sindresorhus/pure pure.zsh
 
     # save all to init script
     zgen save
